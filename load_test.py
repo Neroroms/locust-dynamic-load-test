@@ -31,25 +31,32 @@ with open(path.join(loadTestFilePath, loadTestFileInfoName)) as loadTestCsv:
   loadTestDatas = csv.reader(loadTestCsv)
 
   for loadTestData in loadTestDatas:
-    testFileVariable = loadTestData[2]
+    loadTestMethodType = loadTestData[0]
+    loadTestUrl = loadTestData[1]
+    loadTestVariableFileName = loadTestData[2]
+    loadTestExpectStatusCode = loadTestData[3]
 
-    if len(testFileVariable) > 0:
-      with open(path.join(loadTestFilePath,testFileVariable)) as jsonFile:
+    loadTestSetup = {}
+
+    if len(loadTestVariableFileName) > 0:
+      with open(path.join(loadTestFilePath,loadTestVariableFileName)) as jsonFile:
         pathVariables = json.load(jsonFile)
 
         for pathVariable in pathVariables['data']:
           loadTestSetups.append(
-            {
-              "url": replaceVariable(loadTestData[0], pathVariable),
-              "methodType": loadTestData[1]
-            }
+            createLoadTestObject(
+              url = replaceVariable(loadTestUrl, pathVariable),
+              methodType = loadTestMethodType,
+              expectStatusCode = loadTestExpectStatusCode
+            )
           )
     else:
       loadTestSetups.append(
-        {
-          "url": loadTestData[0],
-          "methodType": loadTestData[1]
-        }
+        createLoadTestObject(
+          url = loadTestUrl,
+          methodType = loadTestMethodType,
+          expectStatusCode = loadTestExpectStatusCode
+        )
       )
 
 #Setup locust task
