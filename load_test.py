@@ -1,21 +1,10 @@
-from locust import HttpLocust, TaskSet, task, constant
+from locust import HttpLocust, TaskSet, constant
 from support_function import *
 
 import csv, os, json
 
 scriptPath = os.path.abspath(os.path.dirname(__file__))
 loadTestCsvFileName = "loadTestInfo.csv"
-
-def checkCsvFileConvention(csvRow):
-  #Check load test path
-  checkStringOk(csvRow[0])
-
-  #Check method type
-  checkStringOk(csvRow[1])
-
-  #Check variable file exists
-  if csvRow[2].strip().len() > 0:
-    checkFileExist(csvRow[2])
 
 #Setup load test information
 loadTestSetups = []
