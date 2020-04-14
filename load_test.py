@@ -34,8 +34,6 @@ with open(path.join(scriptPath, loadTestCsvFileName)) as loadTestCsv:
         }
       )
 
-print(loadTestSetups)
-
 #Setup locust task
 locustTaskList = {}
 
