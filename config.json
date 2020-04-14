@@ -1,6 +1,6 @@
 {
   "loadTestFile": {
-    "path": "loadTest",
+    "path": "loadTestFiles",
     "infoName": "loadTestInfo"
   },
   "waitTimePerRequest": "2"
