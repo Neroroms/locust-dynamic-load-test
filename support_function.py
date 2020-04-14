@@ -1,19 +1,5 @@
 from os import path
 
-def checkStringOk(checkData, dataType):
-  if isinstance(checkData, str) == False:
-    print("{} is not string".format(dataType))
-    exit()
-
-  if checkData.strip().len() == 0:
-    print("{} not define".format(dataType))
-    exit()
-
-# Full path only
-def checkFileExist(checkData):
-  if path.exists(checkData) == False:
-    print("File {} does not exists".format(checkData))
-
 def replaceVariable(urlPath, jsonData):
   newUrlPath = urlPath
 
