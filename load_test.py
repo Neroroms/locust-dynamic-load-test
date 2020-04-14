@@ -26,7 +26,7 @@ with open(path.join(scriptPath, loadTestCsvFileName)) as loadTestCsv:
   for loadTestData in loadTestDatas:
     testFileVariable = loadTestData[2]
 
-    if testFileVariable.len() > 0:
+    if len(testFileVariable) > 0:
       with open(path.join(scriptPath, testFileVariable)) as jsonFile:
         pathVariables = json.load(jsonFile)
 
