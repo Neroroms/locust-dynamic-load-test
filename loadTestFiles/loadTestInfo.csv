@@ -1,3 +1,4 @@
 GET,/textRes/{{var1}},testVariable.json,
 GET,/jsonRes/{{var1}},testVariable.json,
-POST,/textPostRes,,404
+GET,/testPageNotExists,,404
+GET,/{{number1}}/add/{{number2}},testAdd.json,
