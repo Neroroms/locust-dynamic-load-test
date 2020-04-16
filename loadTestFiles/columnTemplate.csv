@@ -1,1 +1,1 @@
-method,url,urlVariableFileName,expectStatusCode
+method,url,urlVariableFileName,headersFileName,contentType,bodyFileName,expectStatusCode
