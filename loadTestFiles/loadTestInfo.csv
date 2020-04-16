@@ -1,4 +1,7 @@
-GET,/textRes/{{var1}},testVariable.json,
-GET,/jsonRes/{{var1}},testVariable.json,
-GET,/testPageNotExists,,404
-GET,/{{number1}}/add/{{number2}},testAdd.json,
+GET,/textRes/{{var1}},testVariable.json,,,,
+GET,/jsonRes/{{var1}},testVariable.json,,,,
+GET,/testPageNotExists,,,,,404
+GET,/{{number1}}/add/{{number2}},testAdd.json,,,,
+POST,/testPostText,,,text/plain,testPostText.json,
+POST,/testPostJson,,,application/json,testPostJson.json,
+POST,/readHeaderTest,,readHeaderTestHeaders.json,application/json,readHeaderTestData.json,
